@@ -7,7 +7,25 @@ Open tools from the Unity menu:
 - `Tools/kkmia/Dialogue Preview`
 - `Tools/kkmia/Dialogue Graph Editor`
 
-The Graph Editor is intended for visual authoring. The CSV Editor remains available for table-style editing.
+The Graph Editor is intended for visual authoring. The CSV Editor provides a planner-friendly row list and focused detail form for line-by-line editing.
+
+## Dialogue CSV Editor
+
+Open `Tools/kkmia/Dialogue CSV Editor`, or select a `.csv` TextAsset in the Project window and use `Assets/Open in Dialogue CSV Editor`.
+
+The editor keeps large scenario files interactive by virtualizing the row list: Unity creates controls only for the visible ID, speaker, and dialogue summaries. Selecting a row opens a detail form grouped into dialogue, flow and logic, progress, presentation, and custom columns. Every source header remains editable and saves in its original order.
+
+Authoring controls include:
+
+- search across every column and an exact speaker filter;
+- direct navigation to a dialogue ID;
+- multiline fields for dialogue text, choices, and character directives;
+- add, duplicate-with-new-ID, delete, and move-row commands;
+- bounded row-level undo/redo instead of full-database snapshots;
+- `Validate Draft`, which checks unsaved in-memory edits;
+- guarded transitions to Validator and Preview, which prompt to save the draft first.
+
+The window marks unsaved drafts with `*`, prompts before switching CSV assets or closing, and supports `Ctrl/Cmd+S`, `Ctrl/Cmd+F`, and editor-level undo/redo shortcuts when a text field is not handling its own input. Deleting or reordering rows never rewrites `NextId` or choice targets automatically; run `Validate Draft` after structural edits.
 
 ## Dialogue Preview
 
