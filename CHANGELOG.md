@@ -8,6 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Added
 
+- Planner-friendly Dialogue CSV Editor with a virtualized row list, grouped detail form for every known or custom column, all-column search, speaker filtering, ID navigation, structural row commands, bounded row-level undo/redo, unsaved-draft protection, and in-memory validation. A 10,000-row editor-model regression fixture covers large-scenario load, search, and editing.
 - Package dependency metadata for clean UPM installs on Unity 6000.x, plus local consumer-project install validation and documented Git tag/commit pinning guidance.
 - Full stage/audio save restore: `DialogueStageBinder` and `DialogueAudioBinder` now implement `IDialogueSaveContributor`, so assigning them to `DialogueSaveSystem` persists and restores the background, character slots (with expressions), and current BGM. `DialogueStageState` tracks per-slot expression and exposes `Snapshot`/`RestoreSnapshot`; `DialogueStageDirector` and `DialogueAudioDirector` expose capture/restore of their current state.
 - Pluggable character rendering: `IDialogueCharacterBackend` lets `DialogueStageView` delegate stand-in drawing to Live2D / Spine / prefab models instead of sprites. `DialogueCharacterModel` (Animator + SetActive default) and `ModelDialogueCharacterBackend` (key→model registry with slot anchors) cover the SDK-free path.
